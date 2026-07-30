@@ -7,9 +7,9 @@ app.use(express.json());
 const PORT = 5000;
 
 app.get("/", (req, res) => {
-    res.status(200).json({
+    res.status(204).json({
         success: true,
-        message: "server is running",  // Fixed message here
+        message: "server is ",
     });
 });
 
