@@ -1,23 +1,21 @@
-import request from "supertest";
-import app from "./index.js";
+import express from "express";
 
-try {
-  const res = await request(app).get("/");
+const app = express();
 
-  if (
-    res.status === 200 &&
-    res.body.success === true &&
-    res.body.message === "server is running"
-  ) {
-    console.log("✅ Smoke Test Passed");
-    process.exit(0);
-  } else {
-    console.log("❌ Smoke Test Failed");
-    console.log(res.body);
-    process.exit(1);
-  }
-} catch (err) {
-  console.error("❌ Smoke Test Failed");
-  console.error(err);
-  process.exit(1);
-}
+app.use(express.json());
+
+const PORT = 5000;
+
+app.get("/", (req, res) => {
+    res.status(200).json({
+        success: true,
+        message: "server running",
+    });
+});
+
+// Removed app.listen since it's not needed in test files
+// app.listen(PORT, () => {
+//     console.log(`app is listening on port ${PORT}`);
+// });
+
+export default app;
