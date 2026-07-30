@@ -6,8 +6,8 @@ try {
 
   if (
     res.status === 200 &&
-    res.body.success === false &&
-    res.body.message === "server is running"
+    res.body.success === true &&
+    res.body.message === "server is runnin"
   ) {
     console.log("✅ Smoke Test Passed");
     process.exit(0);
