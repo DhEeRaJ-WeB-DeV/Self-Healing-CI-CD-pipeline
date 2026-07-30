@@ -7,9 +7,9 @@ app.use(express.json());
 const PORT = 5000;
 
 app.get("/", (req, res) => {
-    res.status(400).json({
-        success: false,
-        message: "server run",
+    res.status(200).json({
+        success: true,
+        message: "server running",
     });
 });
 
