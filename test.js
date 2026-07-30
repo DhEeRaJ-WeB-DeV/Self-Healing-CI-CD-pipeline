@@ -9,7 +9,7 @@ try {
     res.body.success === true &&
     res.body.message === "server is running"
   ) {
-    console.log("✅ Smoke Test Passed");
+    console.log("✅ Smoke Test Pass");
     process.exit(0);
   } else {
     console.log("❌ Smoke Test Failed");
